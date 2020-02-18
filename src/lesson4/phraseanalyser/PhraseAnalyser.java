@@ -2,9 +2,6 @@ package lesson4.phraseanalyser;
 
 public class PhraseAnalyser {
 
-    private String analyse;
-
-
     public String analyse(String text) {
         if (text.startsWith("Make") && text.endsWith("great again")) {
             return "It stands no chance";
@@ -14,9 +11,4 @@ public class PhraseAnalyser {
             return "It is fine, really";
         }
     }
-
-    public String getAnalyse() {
-       return analyse;
-    }
-
 }
