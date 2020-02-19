@@ -30,4 +30,11 @@ public class Stock {
     System.out.println("Company = \"" + this.companyName + "\", Current Price = " + this.currentPrice + ", Min Price = " + this.minPrice + ", Max Price = " + this.maxPrice);
   }
 
+  public int getCurrentPrice() {
+    return currentPrice;
+  }
+
+  public String getCompanyName() {
+    return companyName;
+  }
 }
