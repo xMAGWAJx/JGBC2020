@@ -17,10 +17,12 @@ public class PhraseAnalyserTest {
 
         testRunner.test5();
         testRunner.test6();
+        testRunner.test7();
+        testRunner.test8();
     }
 
     public void test1() {
-        String testDescription = "Test1: Return correct answer - It stands no chance";
+        String testDescription = "Test1: Return correct answer - 'It stands no chance'";
 
         PhraseAnalyser victim = new PhraseAnalyser();
 
@@ -33,7 +35,7 @@ public class PhraseAnalyserTest {
     }
 
     public void test2() {
-        String testDescription = "Test2: Return correct answer - It could be worse for first part of fraze = Make";
+        String testDescription = "Test2: Return correct answer - 'It could be worse' for first part of fraze = 'Make'";
 
         PhraseAnalyser victim = new PhraseAnalyser();
 
@@ -46,7 +48,7 @@ public class PhraseAnalyserTest {
     }
 
     public void test3() {
-        String testDescription = "Test3: Return correct answer - It could be worse for last part of fraze = great again";
+        String testDescription = "Test3: Return correct answer - 'It could be worse' for last part of fraze = 'great again'";
 
         PhraseAnalyser victim = new PhraseAnalyser();
 
@@ -59,7 +61,7 @@ public class PhraseAnalyserTest {
     }
 
     public void test4() {
-        String testDescription = "Test4: Return correct answer - It is fine, really - because sentence doe's not starts from Make and doesn't ends with great again";
+        String testDescription = "Test4: Return correct answer - 'It is fine, really' - because sentence doe's not starts from 'Make' and doesn't ends with 'great again'";
 
         PhraseAnalyser victim = new PhraseAnalyser();
 
@@ -72,7 +74,7 @@ public class PhraseAnalyserTest {
     }
 
     public void test5() {
-        String testDescription = "Test5: Return failed for - It stands no chance because fraze doesn't starts with Make and doesn't end with great again";
+        String testDescription = "Test5: Return failed for - 'It stands no chance' because fraze doesn't starts with 'Make' and doe's not ends with 'grate again'";
 
         PhraseAnalyser victim = new PhraseAnalyser();
 
@@ -85,13 +87,39 @@ public class PhraseAnalyserTest {
     }
 
     public void test6() {
-        String testDescription = "Test6: Return failed for - It could be worse - because sentence doe's not starts from Make";
+        String testDescription = "Test6: Return failed for - 'It could be worse' because fraze doesn't starts with 'Make' or doe's not ends with 'grate again'";
 
         PhraseAnalyser victim = new PhraseAnalyser();
 
         String text = "Some text to check that everything works fine!";
 
+        String expectedResult = "It could be worse";
+        String actualResult = victim.analyse(text);
+
+        checkThatEqual(expectedResult, actualResult, testDescription);
+    }
+
+   public void test7() {
+        String testDescription = "Test7: Return failed for - 'It stands no chance' - text contains 'Make' and great again but it's in the middle of the sentence";
+
+        PhraseAnalyser victim = new PhraseAnalyser();
+
+        String text = "Please Make tests great again in this century";
+
         String expectedResult = "It stands no chance";
+        String actualResult = victim.analyse(text);
+
+        checkThatEqual(expectedResult, actualResult, testDescription);
+    }
+
+    public void test8() {
+        String testDescription = "Test8: Return failed for - 'It could be worse' - text contains 'Make' and great again but it's in the middle of the sentence";
+
+        PhraseAnalyser victim = new PhraseAnalyser();
+
+        String text = "Please Make tests great again in this century";
+
+        String expectedResult = "It could be worse";
         String actualResult = victim.analyse(text);
 
         checkThatEqual(expectedResult, actualResult, testDescription);
