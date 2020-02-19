@@ -7,49 +7,27 @@ public class Stock {
   private int minPrice;
   private int maxPrice;
 
-
-
   public Stock(String companyName, int currentPrice) {
     this.companyName = companyName;
     this.currentPrice = currentPrice;
+    this.minPrice = currentPrice;
+    this.maxPrice = currentPrice;
+  }
+
+  public void updatePrice(int newPrice) {
+
+    this.currentPrice = newPrice;
+
+     if (newPrice < minPrice) {
+      this.minPrice = newPrice;
+     }
+     if (newPrice > maxPrice) {
+       this.maxPrice = newPrice;
+     }
   }
 
   public void printInformation() {
-    System.out.println("Company = \"" + getCompanyName() + "\", Current Price = " + getCurrentPrice() + ", Min Price = " + getMinPrice() + ", Max Price = " + getMaxPrice());
+    System.out.println("Company = \"" + this.companyName + "\", Current Price = " + this.currentPrice + ", Min Price = " + this.minPrice + ", Max Price = " + this.maxPrice);
   }
 
-  public void updatePrice(int currentPrice) {
-    if (currentPrice < getMaxPrice()) {
-      setMaxPrice(currentPrice);
-    } else if (currentPrice > getMinPrice()) {
-      setMinPrice(currentPrice);
-    } else {
-
-      System.out.println("Some error");
-    }
-  }
-
-  public String getCompanyName() {
-    return companyName;
-  }
-
-  public int getCurrentPrice() {
-    return currentPrice;
-  }
-
-  public void setMinPrice(int minPrice) {
-    this.minPrice = minPrice;
-  }
-
-  public void setMaxPrice(int maxPrice) {
-    this.maxPrice = maxPrice;
-  }
-
-  public int getMinPrice() {
-    return minPrice;
-  }
-
-  public int getMaxPrice() {
-    return maxPrice;
-  }
 }
