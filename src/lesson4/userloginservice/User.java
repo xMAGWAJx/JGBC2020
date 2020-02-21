@@ -4,19 +4,20 @@ public class User {
 
   private String login;
   private String password;
-  private boolean userIsBloocked;
+  private boolean userIsBlocked;
   private int numberOfAttempts;
+
+  public String getLogin() {
+    return login;
+  }
 
   public User(String login, String password) {
     this.login = login;
     this.password = password;
-  }
-
-  public void login () {
 
   }
 
-  public void resetnumberOfAttempts() {
+  public void resetNumberOfAttempts() {
 
   }
 
@@ -28,16 +29,6 @@ public class User {
 
 
 /*
-*
-*
-* Описание:
-Необходимо разработать программу, которая проверяет, можно ли пользователю войти в свою учетную запись ("логин").
-
-Функциональные требования:
-Программа должна состоять из 2-х базовых компонентов: User и UserLoginService.
-
-Класс User должен представлять сущность пользователя и обладать следующими характеристиками:
-
 Свойства
 
 Логин
@@ -48,6 +39,7 @@ public class User {
 
 Сбросить количество попыток входа
 Заблокировать пользователя
+
 Класс UserLoginService должен представлять сервис для выполнения логики со сравнением и обладать следующими характеристиками:
 
 Методы
@@ -56,16 +48,5 @@ public class User {
 Нефункциональные требования:
 Продемонстрировать работу классов (см. пример) в классе UserLoginServiceDemo.
 
-Опционально: Написать тестовые сценарии для класса User в UserTest и UserLoginService в классе UserLoginServiceTest. Все тестовые сценарии должны отрабатывать без ошибок.
 
-Результат:
-Загрузить файлы User.java, UserTest.java, UserLoginService.java UserLoginServiceTest.java, UserLoginServiceDemo.java в одном архиве (*.zip, *.rar)
-
-Пример:
-UserLoginService service = new UserLoginService();
-User userOne = new User("user-login", "user-password");
-​
-service.login(userOne, "user-password-12345"); //Should return false
-service.login(userOne, "user-password"); //Should return true
-*
 * */
