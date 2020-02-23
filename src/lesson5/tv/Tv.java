@@ -31,25 +31,25 @@ public class Tv {
   }
 
   public void nextChannel() {
-    if (isTVon = true) {
+    if (this.isTVon) {
       this.currentChannel++;
     }
   }
 
   public void previousChannel() {
-    if (this.isTVon = true){
+    if (this.isTVon){
       this.currentChannel--;
     }
   }
 
   public void addVolume() {
-    if (isTVon = true) {
+    if (isTVon) {
       this.currentVolume++;
     }
   }
 
   public void decreaseVolume() {
-    if (isTVon = true) {
+    if (isTVon) {
       this.currentVolume--;
     }
   }
