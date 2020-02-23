@@ -1,5 +1,7 @@
 package lesson5.tv;
 
+import java.util.Objects;
+
 public class Tv {
 
   private int currentChannel;
@@ -13,12 +15,20 @@ public class Tv {
     this.manufacturer = manufacturer;
   }
 
-  public int getCurrentChannel() {
-    return currentChannel;
+  // This Method is for testing purposes. It passes isTVon = true for TvTest.
+  public Tv(int currentChannel, int currentVolume, String manufacturer, boolean isTVon) {
+    this.currentChannel = currentChannel;
+    this.currentVolume = currentVolume;
+    this.manufacturer = manufacturer;
+    this.isTVon = isTVon;
   }
 
-  public int getcurrentVolume() {
-    return currentVolume;
+  public int getCurrentChannel() {
+      return currentChannel;
+    }
+
+    public int getCurrentVolume() {
+      return currentVolume;
   }
 
   public String getManufacturer() {
@@ -43,13 +53,13 @@ public class Tv {
   }
 
   public void addVolume() {
-    if (isTVon) {
+    if (this.isTVon) {
       this.currentVolume++;
     }
   }
 
   public void decreaseVolume() {
-    if (isTVon) {
+    if (this.isTVon) {
       this.currentVolume--;
     }
   }
@@ -62,5 +72,16 @@ public class Tv {
             ", manufacturer='" + manufacturer + '\'' +
             ", isTVon=" + isTVon +
             '}';
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Tv tv = (Tv) o;
+    return currentChannel == tv.currentChannel &&
+            currentVolume == tv.currentVolume &&
+            isTVon == tv.isTVon &&
+            Objects.equals(manufacturer, tv.manufacturer);
   }
 }

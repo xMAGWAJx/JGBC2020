@@ -5,6 +5,9 @@ public class TvDemo {
   public static void main(String[] args) {
 
     Tv tv = new Tv(10, 5, "Samsung");
+    Tv tv1 = new Tv(10, 5, "Samsung");
+    Tv tv2 = new Tv(10, 5, "Samsung");
+    Tv tv3 = new Tv(420, 100500, "Sony");
 
     tv.isTVon(); // Tv is working: true
 
@@ -26,10 +29,29 @@ public class TvDemo {
 
     tv.previousChannel();
 
-    System.out.println(tv.getCurrentChannel()); // expected 10 ... but I get 9
+    System.out.println(tv.getCurrentChannel()); // expected 10
 
     tv.nextChannel();
 
-    System.out.println(tv.getCurrentChannel()); // expected 10 .... but it also increments as in previous step.
+    System.out.println(tv.getCurrentChannel()); // expected 10
+
+    System.out.println(tv.getManufacturer()); // expected Samsung
+
+    tv.isTVon(); // Tv is working: true
+
+    System.out.println(tv.getCurrentVolume()); // expected 5
+
+    tv.addVolume();
+    tv.addVolume();
+
+    System.out.println(tv.getCurrentVolume()); // expected 7
+
+    tv.decreaseVolume();
+
+    System.out.println(tv.getCurrentVolume()); // expected 6
+
+    System.out.println(tv1.equals(tv2)); // true
+
+    System.out.println(tv2.equals(tv3)); // false
   }
 }
