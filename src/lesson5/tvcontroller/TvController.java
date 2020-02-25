@@ -4,9 +4,12 @@ public class TvController {
 
    private Tv tv;
 
-  public void setTv(Tv tv) {
+    public TvController(Tv tv) {
+        this.tv = tv;
+    }
+
+    public void setTv(Tv tv) {
     this.tv = tv;
   }
-
 
 }

@@ -1,14 +1,14 @@
 package lesson5.tvcontroller;
 
-import lesson5.tv.Tv;
-
 public class TvDemo {
 
   public static void main(String[] args) {
 
     Tv tv = new Tv(10, 5, "Samsung");
-    TvController tvcontroller = new TvController();
 
+    TvController tvcontroller = new TvController(tv);
+
+    tvcontroller.setTv(tv);
 
 
 //    Tv tv1 = new Tv(10, 5, "Samsung");
