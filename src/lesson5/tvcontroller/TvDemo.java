@@ -4,12 +4,14 @@ public class TvDemo {
 
   public static void main(String[] args) {
 
-    Tv tv = new Tv(10, 5, "Samsung");
+    Tv tv = new Tv(10, 5, "Samsung", true);
 
     TvController tvcontroller = new TvController(tv);
 
-    tvcontroller.setTv(tv);
+    tvcontroller.controellerNextChannel();
 
+
+    System.out.println(tv.getCurrentChannel());
 
 //    Tv tv1 = new Tv(10, 5, "Samsung");
 //    Tv tv2 = new Tv(10, 5, "Samsung");

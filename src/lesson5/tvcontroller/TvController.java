@@ -16,4 +16,8 @@ public class TvController {
       tv.isTVon();
   }
 
+  public void controellerNextChannel () {
+      tv.nextChannel();
+  }
+
 }
