@@ -12,4 +12,8 @@ public class TvController {
     this.tv = tv;
   }
 
+  public void isTvOn() {
+      tv.isTVon();
+  }
+
 }

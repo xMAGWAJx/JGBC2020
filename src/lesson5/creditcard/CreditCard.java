@@ -11,7 +11,7 @@ public class CreditCard {
   public CreditCard(String cardNumber, String cardPinCode) {
     this.cardNumber = cardNumber;
     this.cardPinCode = cardPinCode;
-    this.cardBalance = 0;
+    this.cardBalance = 1000;
     this.cardLoanDebt = 0;
   }
 
@@ -55,11 +55,27 @@ public class CreditCard {
     this.cardLoanDebt = cardLoanDebt;
   }
 
-  public void deposit() {
-
+  public void deposit(int depositToBalance, String enteredCardPinCode) {
+      if (cardPinCode != enteredCardPinCode) {
+          System.out.println("Access denied - wrong pin number.");
+      }else if (enteredCardPinCode.equals(cardPinCode)) {
+        this.cardBalance += depositToBalance;
+      } else {
+        System.out.println("somethisg");
+      }
   }
 
-  public void withdraw() {
+  public void withdraw(int withdrawAmount, String enteredCardPinCode) {
 
+//      int cardBalanceAndCreditLimit = this.cardBalance + this.cardCreditLimit;
+//
+//      if (enteredCardPinCode.equals(cardPinCode) && (cardBalanceAndCreditLimit >= withdrawAmount)) {
+////          this.cardBalance -= withdrawAmount;
+//        cardBalanceAndCreditLimit - withdrawAmount;
+//      } else if (cardPinCode != enteredCardPinCode) {
+//        System.out.println("Access denied - wrong pin number.");
+//      }else {
+//        System.out.println("Out off money");
+//      }
   }
 }
