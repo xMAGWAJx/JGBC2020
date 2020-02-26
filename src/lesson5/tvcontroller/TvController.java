@@ -12,12 +12,21 @@ public class TvController {
     this.tv = tv;
   }
 
-  public void isTvOn() {
-      tv.isTVon();
+
+  public void controllerNextChannel () {
+      tv.nextChannel();
   }
 
-  public void controellerNextChannel () {
-      tv.nextChannel();
+  public void controllerPriviousChannel () {
+    tv.previousChannel();
+  }
+
+  public void controllerAddVolume () {
+      tv.addVolume();
+  }
+
+  public void controllerDecreaseVolume () {
+      tv.decreaseVolume();
   }
 
 }

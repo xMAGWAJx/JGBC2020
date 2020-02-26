@@ -8,7 +8,7 @@ public class TvDemo {
 
     TvController tvcontroller = new TvController(tv);
 
-    tvcontroller.controellerNextChannel();
+    tvcontroller.controllerNextChannel();
 
 
     System.out.println(tv.getCurrentChannel());
