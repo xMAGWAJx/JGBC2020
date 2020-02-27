@@ -2,31 +2,30 @@ package lesson5.tvcontroller;
 
 public class TvController {
 
-   private Tv tv;
+  private Tv tv;
 
-    public TvController(Tv tv) {
-        this.tv = tv;
-    }
-
-    public void setTv(Tv tv) {
+  public TvController(Tv tv) {
     this.tv = tv;
   }
 
-
-  public void controllerNextChannel () {
-      tv.nextChannel();
+  public void controllerTurnTvOnOrOff() {
+    tv.isTVon();
   }
 
-  public void controllerPriviousChannel () {
+  public void controllerNextChannel() {
+    tv.nextChannel();
+  }
+
+  public void controllerPreviousChannel() {
     tv.previousChannel();
   }
 
-  public void controllerAddVolume () {
-      tv.addVolume();
+  public void controllerAddVolume() {
+    tv.addVolume();
   }
 
-  public void controllerDecreaseVolume () {
-      tv.decreaseVolume();
+  public void controllerDecreaseVolume() {
+    tv.decreaseVolume();
   }
 
 }

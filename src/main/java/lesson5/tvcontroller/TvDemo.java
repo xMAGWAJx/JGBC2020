@@ -4,62 +4,43 @@ public class TvDemo {
 
   public static void main(String[] args) {
 
-    Tv tv = new Tv(10, 5, "Samsung", true);
+    Tv tv = new Tv(10, 5, "Samsung");
 
     TvController tvcontroller = new TvController(tv);
 
+    // Check that controller methods work.
+
     tvcontroller.controllerNextChannel();
 
+    System.out.println("Current channel: " + tv.getCurrentChannel()); // return: 10 - because tv is off
 
-    System.out.println(tv.getCurrentChannel());
+    tvcontroller.controllerTurnTvOnOrOff(); // returns: Tv is working: true
 
-//    Tv tv1 = new Tv(10, 5, "Samsung");
-//    Tv tv2 = new Tv(10, 5, "Samsung");
-//    Tv tv3 = new Tv(420, 100500, "Sony");
-//
-//    tv.isTVon(); // Tv is working: true
-//
-//    System.out.println(tv); // Tv{currentChannel=10, currentVolume=5, manufacturer='Samsung', isTVon=true}
-//
-//    tv.nextChannel();
-//
-//    System.out.println(tv.getCurrentChannel()); // 11
-//
-//    tv.previousChannel();
-//
-//    System.out.println(tv.getCurrentChannel()); // 10
-//
-//    System.out.println(tv); // Tv{currentChannel=10, currentVolume=5, manufacturer='Samsung', isTVon=true}
-//
-//    tv.isTVon(); // Tv is working: false
-//
-//    System.out.println(tv); // Tv{currentChannel=10, currentVolume=5, manufacturer='Samsung', isTVon=false}
-//
-//    tv.previousChannel();
-//
-//    System.out.println(tv.getCurrentChannel()); // expected 10
-//
-//    tv.nextChannel();
-//
-//    System.out.println(tv.getCurrentChannel()); // expected 10
-//
-//    System.out.println(tv.getManufacturer()); // expected Samsung
-//
-//    tv.isTVon(); // Tv is working: true
-//
-//    System.out.println(tv.getCurrentVolume()); // expected 5
-//
-//    tv.addVolume();
-//    tv.addVolume();
-//
-//    System.out.println(tv.getCurrentVolume()); // expected 7
-//
-//    tv.decreaseVolume();
-//
-//    System.out.println(tv.getCurrentVolume()); // expected 6
-//
-//    System.out.println(tv1.equals(tv2)); // true
-//
-//    System.out.println(tv2.equals(tv3)); // false
+    tvcontroller.controllerNextChannel();
+
+    System.out.println("Current channel: " + tv.getCurrentChannel()); // return: 11 - because tv is on
+
+    tvcontroller.controllerTurnTvOnOrOff(); // returns: Tv is working: false
+
+    tvcontroller.controllerNextChannel();
+
+    System.out.println("Current channel: " + tv.getCurrentChannel()); // returns: 11 - because tv is off
+
+    tvcontroller.controllerTurnTvOnOrOff(); // returns: Tv is working: true
+
+    tvcontroller.controllerPreviousChannel();
+    tvcontroller.controllerPreviousChannel();
+
+    System.out.println("Current channel: " + tv.getCurrentChannel()); // returns: 9 - because tv is on
+
+    tvcontroller.controllerAddVolume();
+
+    System.out.println("Current volume: " + tv.getCurrentVolume()); // return: 6 - because tv is on
+
+    tvcontroller.controllerDecreaseVolume();
+    tvcontroller.controllerDecreaseVolume();
+
+    System.out.println("Current volume: " + tv.getCurrentVolume()); // return: 4 - because tv is on
+
   }
 }
