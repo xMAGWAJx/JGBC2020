@@ -6,16 +6,110 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CarTest {
 
-//  @Test
-//  void test1_accelerate() {
-//
-//    Car victim = new Car();
-//
-//    int expected = 40;
-//
-//    int actual = victim.accelerate(40);
-//
-//    assertEquals(expected, actual);
-//  }
+  @Test
+  void accelerate() {
+
+    Car victim = new Car("TestCar", "black", 100, 20);
+
+    int expected = 40;
+
+    victim.accelerate(40);
+
+    int actual = victim.getCarCurrentSpeed();
+
+    assertEquals(expected, actual);
+  }
+
+  @Test
+  void accelerate_doNothingIfCurrentSpeedBigger() {
+
+    Car victim = new Car("TestCar", "black", 100, 50);
+
+    int expected = 50;
+
+    victim.accelerate(40);
+
+    int actual = victim.getCarCurrentSpeed();
+
+    assertEquals(expected, actual);
+  }
+
+  @Test
+  void accelerate_doNothingIfTargetBiggerThanMaxSpeed() {
+
+    Car victim = new Car("TestCar", "black", 100, 100);
+
+    int expected = 100;
+
+    victim.accelerate(110);
+
+    int actual = victim.getCarCurrentSpeed();
+
+    assertEquals(expected, actual);
+  }
+
+  @Test
+  void decelerate() {
+
+    Car victim = new Car("TestCar", "black", 100, 50);
+
+    int expected = 40;
+
+    victim.decelerate(40);
+
+    int actual = victim.getCarCurrentSpeed();
+
+    assertEquals(expected, actual);
+  }
+
+  @Test
+  void decelerate_doNothigIfCurrentSpeedIsLessThenZero() {
+
+    Car victim = new Car("TestCar", "black", 100, 0);
+
+    int expected = 0;
+
+    victim.decelerate(40);
+
+    int actual = victim.getCarCurrentSpeed();
+
+    assertEquals(expected, actual);
+  }
+
+  @Test
+  void isDriving() {
+
+    Car victim = new Car("TestCar", "black", 100, 10);
+
+    boolean expected = true;
+
+    boolean actual = victim.isDriving();
+
+    assertEquals(expected, actual);
+  }
+
+  @Test
+  void isStopped() {
+
+    Car victim = new Car("TestCar", "black", 100, 0);
+
+    boolean expected = true;
+
+    boolean actual = victim.isStopped();
+
+    assertEquals(expected, actual);
+  }
+
+  @Test
+  void canAccelerate() {
+
+    Car victim = new Car("TestCar", "black", 100, 50);
+
+    boolean expected = true;
+
+    boolean actual = victim.canAccelerate();
+
+    assertEquals(expected, actual);
+  }
 
 }
