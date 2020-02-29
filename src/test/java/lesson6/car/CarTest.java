@@ -9,7 +9,7 @@ class CarTest {
   @Test
   void accelerate() {
 
-    Car victim = new Car("TestCar", "black", 100, 20);
+    Car victim = new Car("TestCar", "black", 100);
 
     int expected = 40;
 
@@ -23,7 +23,9 @@ class CarTest {
   @Test
   void accelerate_doNothingIfCurrentSpeedBigger() {
 
-    Car victim = new Car("TestCar", "black", 100, 50);
+    Car victim = new Car("TestCar", "black", 100);
+
+    victim.accelerate(50);
 
     int expected = 50;
 
@@ -37,7 +39,7 @@ class CarTest {
   @Test
   void accelerate_doNothingIfTargetBiggerThanMaxSpeed() {
 
-    Car victim = new Car("TestCar", "black", 100, 100);
+    Car victim = new Car("TestCar", "black", 100);
 
     int expected = 100;
 
@@ -49,9 +51,25 @@ class CarTest {
   }
 
   @Test
+  void accelerate_untilMaxSpeedIfTargetIsBigger() {
+
+    Car victim = new Car("TestCar", "black", 150);
+
+    int expected = 150;
+
+    victim.accelerate(180);
+
+    int actual = victim.getCarCurrentSpeed();
+
+    assertEquals(expected, actual);
+  }
+
+  @Test
   void decelerate() {
 
-    Car victim = new Car("TestCar", "black", 100, 50);
+    Car victim = new Car("TestCar", "black", 100);
+
+    victim.accelerate(50);
 
     int expected = 40;
 
@@ -63,9 +81,9 @@ class CarTest {
   }
 
   @Test
-  void decelerate_doNothigIfCurrentSpeedIsLessThenZero() {
+  void decelerate_doNothingIfCurrentSpeedIsLessThenZero() {
 
-    Car victim = new Car("TestCar", "black", 100, 0);
+    Car victim = new Car("TestCar", "black", 100);
 
     int expected = 0;
 
@@ -79,7 +97,9 @@ class CarTest {
   @Test
   void isDriving() {
 
-    Car victim = new Car("TestCar", "black", 100, 10);
+    Car victim = new Car("TestCar", "black", 100);
+
+    victim.accelerate(10);
 
     boolean expected = true;
 
@@ -91,7 +111,7 @@ class CarTest {
   @Test
   void isStopped() {
 
-    Car victim = new Car("TestCar", "black", 100, 0);
+    Car victim = new Car("TestCar", "black", 100);
 
     boolean expected = true;
 
@@ -103,7 +123,7 @@ class CarTest {
   @Test
   void canAccelerate() {
 
-    Car victim = new Car("TestCar", "black", 100, 50);
+    Car victim = new Car("TestCar", "black", 100);
 
     boolean expected = true;
 

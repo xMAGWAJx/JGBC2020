@@ -9,35 +9,22 @@ public class Car {
   private int carMaxSpeed;
   private int carCurrentSpeed;
 
-  public Car(String carModel, String carColor, int carMaxSpeed, int carCurrentSpeed) {
+  public Car(String carModel, String carColor, int carMaxSpeed) {
     this.carModel = carModel;
     this.carColor = carColor;
     this.carMaxSpeed = carMaxSpeed;
-    this.carCurrentSpeed = carCurrentSpeed;
   }
 
   public boolean isDriving() {
-      if (this.carCurrentSpeed > 0) {
-        return true;
-      } else {
-        return false;
-      }
+    return carCurrentSpeed > 0;
   }
 
   public boolean isStopped() {
-    if (this.carCurrentSpeed == 0) {
-      return true;
-    } else {
-      return false;
-    }
+    return carCurrentSpeed == 0;
   }
 
   public boolean canAccelerate() {
-    if (this.carCurrentSpeed < carMaxSpeed) {
-      return true;
-    } else {
-      return false;
-    }
+    return carCurrentSpeed < carMaxSpeed;
   }
 
   public int getCarCurrentSpeed() {
@@ -45,8 +32,8 @@ public class Car {
   }
 
   public void accelerate(int targetSpeed) {
-    while ((carCurrentSpeed < targetSpeed) && (targetSpeed <= carMaxSpeed) && (carCurrentSpeed != carMaxSpeed))  {
-      carCurrentSpeed++;
+      while ((carCurrentSpeed < targetSpeed) && (carCurrentSpeed < carMaxSpeed))  {
+        carCurrentSpeed++;
     }
   }
 
