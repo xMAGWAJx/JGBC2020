@@ -9,7 +9,7 @@ public class ArrayDemo {
 
     Random random = new Random();
     for (int i = 0; i < array.length; i++) {
-      array[i] = random.nextInt();
+      array[i] = random.nextInt(100);
     }
 
     for (int i = 0; i < array.length; i++) {
