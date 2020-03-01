@@ -7,7 +7,7 @@ public class Palindrome {
     public void isPalindrome(String text) {
         boolean stringIsPalindrome = true;
 
-        text = text.toLowerCase().replaceAll("[^a-zA-Z0-9]", "");
+        text = text.toLowerCase().replaceAll("[^a-zA-Z0-9а-яА-Я]", "");
         char[] charArray = text.toCharArray();
         int charArraySize = charArray.length;
 
@@ -22,7 +22,6 @@ public class Palindrome {
         if (Arrays.equals(charArray, charArrayToCompare)) {
             System.out.println("Is '" + text + "' a palindrome? Result: " + stringIsPalindrome);
         } else {
-//            stringIsPalindrome = false;
             System.out.println("Is '" + text + "' a palindrome? Result: " + !stringIsPalindrome);
         }
     }
