@@ -4,13 +4,10 @@ public class ArrayServiceDemo {
 
     public static void main(String[] args) {
 
-        ArrayService arrayService = new ArrayService();
-
-        arrayService.create(100);
-
-//        arrayService.fillRandomly();
-
-        //        arrayService.printArray();
-
+            int [] arrayExample = ArrayService.create(10);
+            ArrayService.fillRandomly(arrayExample);
+            ArrayService.printArray(arrayExample);
+            ArrayService.sum(arrayExample);
+            ArrayService.avg(arrayExample);
     }
 }
