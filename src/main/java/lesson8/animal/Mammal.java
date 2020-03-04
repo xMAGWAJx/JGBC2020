@@ -1,6 +1,6 @@
 package lesson8.animal;
 
-public class Mammal extends Animal{
+public abstract class Mammal extends Animal{
 
   protected String howMammalWillMeetYou;
 

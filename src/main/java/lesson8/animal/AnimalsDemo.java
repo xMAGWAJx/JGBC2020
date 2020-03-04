@@ -26,14 +26,6 @@ public class AnimalsDemo {
 
     System.out.println(parrot.equals(parrot));
 
-    // Mammal
-
-    Mammal someMammal = new Mammal(false,true,"Come and check whats up");
-
-    System.out.println(someMammal);
-    System.out.println(someMammal.howMammalWillMeetYou);
-
-
     // Dog
 
     Dog someDog = new Dog(false, true, "start running towards you");
