@@ -8,7 +8,7 @@ public class UniqueWordCounterDemo {
         wordCounter.addWord("mango");
         wordCounter.addWord("apple");
 
-//        wordCounter.getMostFrequentWord(); //Should return "apple"
-//        wordCounter.printWordsFrequency(); //Should print apple = 2, mango = 1
+        wordCounter.getMostFrequentWord(); //Should return "apple"
+        wordCounter.printWordsFrequency(); //Should print apple = 2, mango = 1
     }
 }

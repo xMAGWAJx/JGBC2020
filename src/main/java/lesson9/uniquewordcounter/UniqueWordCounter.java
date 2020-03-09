@@ -10,20 +10,29 @@ public class UniqueWordCounter {
     public void addWord(String word) {
         if (uniqueWordCounter.containsKey(word)) {
             int howManyTimesWordWasAdded = uniqueWordCounter.get(word);
-            uniqueWordCounter.put(word, howManyTimesWordWasAdded++);
-            System.out.println(word + " " + howManyTimesWordWasAdded);
+            uniqueWordCounter.put(word, ++howManyTimesWordWasAdded);
         } else {
             uniqueWordCounter.put(word, 1);
-            System.out.println(word);
         }
 
     }
 
-//    public int getMostFrequentWord() {
-//
-//    }
-//
-//    public void printWordsFrequency() {
-//
-//    }
+    public String getMostFrequentWord() {
+        String returnMostFrequentWord = null;
+        int mostFrequentWord = 1;
+        for (Map.Entry<String, Integer> entry: uniqueWordCounter.entrySet()) {
+            if (entry.getValue() >= mostFrequentWord) {
+                mostFrequentWord = entry.getValue();
+                returnMostFrequentWord = entry.getKey();
+            }
+        }
+        System.out.println(returnMostFrequentWord);
+        return returnMostFrequentWord;
+    }
+
+    public void printWordsFrequency() {
+        for (Map.Entry<String, Integer> entry: uniqueWordCounter.entrySet()) {
+            System.out.println(entry.getKey() + " = " + entry.getValue());
+        }
+    }
 }
