@@ -1,5 +1,8 @@
 package lesson8.practisetaskfromartyom;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -10,14 +13,32 @@ public class Main {
         System.out.println(Fish.getFishCount());
         System.out.println(Animal.getAnimalCount());
 
-        Animal[] animals = new Animal[4];
-        animals[0] = fish1;
-        animals[1] = fish2;
-        animals[2] = dog;
-        animals[3] = flyingFish;
+        // Using arrays
 
-        AnimalUtils.printStartsWith(animals, "ri");
-        AnimalUtils.makeThemTalk(animals);
+//        Animal[] animals = new Animal[4];
+//        animals[0] = fish1;
+//        animals[1] = fish2;
+//        animals[2] = dog;
+//        animals[3] = flyingFish;
+//
+//        AnimalUtils.printStartsWith(animals, "ri");
+//        AnimalUtils.makeThemTalk(animals);
+
+
+        // Using List
+
+        List<Animal> animals = new ArrayList<>();
+
+        animals.add(fish1);
+        animals.add(fish2);
+        animals.add(dog);
+        animals.add(flyingFish);
+
+//        AnimalUtils.getStartWith(animals, "ri");
+
+        List<Animal> animalList = AnimalUtils.getStartWith(animals, "ri");
+
+        System.out.println(animalList);
     }
 
 }
