@@ -34,11 +34,17 @@ public class Main {
         animals.add(dog);
         animals.add(flyingFish);
 
-//        AnimalUtils.getStartWith(animals, "ri");
+        // getStartWith
 
         List<Animal> animalList = AnimalUtils.getStartWith(animals, "ri");
 
         System.out.println(animalList);
+
+        // getFishes
+
+        List<Animal> fishList = AnimalUtils.getFishes(animals);
+
+        System.out.println(fishList);
     }
 
 }

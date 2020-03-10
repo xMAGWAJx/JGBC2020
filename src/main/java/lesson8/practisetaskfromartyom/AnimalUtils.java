@@ -1,7 +1,9 @@
 package lesson8.practisetaskfromartyom;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class AnimalUtils {
 
@@ -34,5 +36,20 @@ public class AnimalUtils {
         }
         return result;
     }
+
+    public static List<Animal> getFishes(List<Animal> animals) {
+        List<Animal> result = new ArrayList<>();
+        for (Animal fish : animals) {
+            if (fish instanceof Fish) {
+                result.add(fish);
+            }
+        }
+        return result;
+    }
+
+//    public static Map<String, List<Animal>> mapByFirstLetter(List<Animal> animals) {
+//        Map<String, List<Animal>> map = new HashMap<>();
+//
+//    }
 
 }
