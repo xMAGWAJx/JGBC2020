@@ -6,6 +6,8 @@ public class UserValidationDemo {
 
         UserValidationService userValidationService = new UserValidationService();
 
-//        userValidationService.validateUser(new User("testName", "testSurname", 18));
+        User testUser = new User("NameTest", "lastNameTest", 18);
+
+        userValidationService.validate(testUser);
     }
 }

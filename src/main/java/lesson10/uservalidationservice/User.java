@@ -32,16 +32,24 @@ public class User {
         User user = (User) o;
 
         if (age != user.age) return false;
-        if (firstName != null ? !firstName.equals(user.firstName) : user.firstName != null)
-            return false;
-        return lastName != null ? lastName.equals(user.lastName) : user.lastName == null;
+        if (!firstName.equals(user.firstName)) return false;
+        return lastName.equals(user.lastName);
     }
 
     @Override
     public int hashCode() {
-        int result = firstName != null ? firstName.hashCode() : 0;
-        result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
+        int result = firstName.hashCode();
+        result = 31 * result + lastName.hashCode();
         result = 31 * result + age;
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                '}';
     }
 }

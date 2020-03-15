@@ -1,8 +1,8 @@
 package lesson10.uservalidationservice;
 
-public class UserValidationException extends Exception {
+public class UserValidationException extends RuntimeException {
 
-    public UserValidationException (String message) {
+    public UserValidationException(String message) {
         super(message);
     }
 }
