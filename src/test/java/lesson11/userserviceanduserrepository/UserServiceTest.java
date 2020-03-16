@@ -1,6 +1,7 @@
 package lesson11.userserviceanduserrepository;
 
 import org.junit.Before;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -9,11 +10,10 @@ class UserServiceTest {
     private UserService victim;
     private MockUserRepository mockUserRepositoryDataBase;
 
-    @Before
+    @BeforeEach
     public void setUp() {
-        victim = new UserService();
-        victim.userRepositoryDataBase = new MockUserRepository();
-        mockUserRepositoryDataBase = (MockUserRepository) victim.userRepositoryDataBase;
+        this.mockUserRepositoryDataBase = new MockUserRepository();
+        this.victim = new UserService(mockUserRepositoryDataBase);
     }
 
     @Test

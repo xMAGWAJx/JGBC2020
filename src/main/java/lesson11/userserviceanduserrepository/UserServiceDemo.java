@@ -4,7 +4,9 @@ public class UserServiceDemo {
 
     public static void main(String[] args) {
 
-        UserService userService = new UserService();
+        UserRepository userRepository = new UserRepository();
+
+        UserService userService = new UserService(userRepository);
 
         User testUser = new User("TestName", 100);
         User testUser2 = new User("TestName2", 12);
