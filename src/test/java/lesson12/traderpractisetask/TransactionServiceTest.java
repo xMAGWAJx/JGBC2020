@@ -69,4 +69,20 @@ public class TransactionServiceTest {
         assertTrue("Mario", true);
     }
 
+    @Test
+    public void testQuestion6() {
+        List<Transaction> transactions = storage.getTransactions();
+        List<Integer> result = service.question6(transactions);
+
+        assertEquals(result.size(), 4);
+        assertEquals("[300, 1000, 400, 950]", result.toString());
+    }
+
+    @Test
+    public void testQuestion7() {
+        List<Transaction> transactions = storage.getTransactions();
+        Integer result = service.question7(transactions);
+
+        assertEquals("1000", result.toString());
+    }
 }

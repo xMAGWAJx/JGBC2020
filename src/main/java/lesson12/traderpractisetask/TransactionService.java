@@ -6,8 +6,7 @@ public class TransactionService {
 
   // 1. Find all transactions in the year 2011 and sort them by value (small to high).
 
-  public List<Transaction> filterByYear(List<Transaction> transactions,
-                                        int targetYear) {
+  public List<Transaction> filterByYear(List<Transaction> transactions, int targetYear) {
     List<Transaction> transactionsByYear = new ArrayList<>();
     for (Transaction transaction : transactions) {
       if (transaction.getYear() == targetYear) {
@@ -88,14 +87,56 @@ public class TransactionService {
 
   // 6. Print all transactions’ values from the traders living in Cambridge.
 
+  public List<Integer> findTransactionsTradersFromCity (List<Transaction> transactions, String targetCity) {
+    List<Integer> transactionsTradersFromCity = new ArrayList<>();
+    for (Transaction transaction : transactions) {
+      Trader trader = transaction.getTrader();
+      if (trader.getCity() == targetCity) {
+        transactionsTradersFromCity.add(transaction.getValue());
+      }
+    }
+    return transactionsTradersFromCity;
+  }
 
+    public List<Integer> question6(List<Transaction> transactions) {
+      List<Integer> allTransactionsTradersFromCity = findTransactionsTradersFromCity(transactions, "Cambridge");
+      return allTransactionsTradersFromCity;
+    }
 
   // 7. What’s the highest value of all the transactions?
 
+  public List<Integer> findAllTransactions (List<Transaction> transactions) {
+    List<Integer> allTransactions = new ArrayList<>();
+    for (Transaction transaction : transactions) {
+      allTransactions.add(transaction.getValue());
+    }
+    return allTransactions;
+  }
 
+  public Integer findHighestValueOfTransaction (List<Transaction> transactions) {
+    List<Integer> highestValueOfTransaction = findAllTransactions(transactions);
+        Integer maxValue = Collections.max(highestValueOfTransaction);
+        return maxValue;
+  }
+
+  public Integer question7(List<Transaction> transactions) {
+    Integer highestValueOfTransactionResult = findHighestValueOfTransaction(transactions);
+    return highestValueOfTransactionResult;
+  }
 
   // 8. Find the transaction with the smallest value
 
+//  public List<String> findTransactionWithSmallestValue (List<Transaction> transactions) {
+//    List<String> transactionWithSmallestValue = new ArrayList<>();
+//    for (Transaction transaction : transactions) {
+//      transactionWithSmallestValue
+//    }
+//  }
 
+
+//  public String question8(List<Transaction> transactions) {
+//    List<String> transactionWithSmallestValue = findAllTransactions(transactions);
+//    return transactionWithSmallestValue;
+//  }
 
 }
