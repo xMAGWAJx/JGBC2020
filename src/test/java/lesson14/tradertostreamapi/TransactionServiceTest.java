@@ -1,15 +1,14 @@
 package lesson14.tradertostreamapi;
 
+import org.junit.Assert;
 import org.testng.annotations.Test;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.SortedSet;
 
-import lesson12.traderpractisetask.Transaction;
-import lesson12.traderpractisetask.TransactionService;
-import lesson12.traderpractisetask.TransactionStorage;
-
+import static org.junit.Assert.assertNotNull;
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 
@@ -55,22 +54,17 @@ public class TransactionServiceTest {
     @Test
     public void testQuestion4() {
         List<Transaction> transactions = storage.getTransactions();
-        SortedSet<String> result = service.question4(transactions);
+        String result = service.question4(transactions);
 
-        assertEquals(result.size(), 4);
-        assertTrue("Raoul", true);
-        assertTrue("Mario", true);
-        assertTrue("Alan", true);
-        assertTrue("Brian", true);
+        Assert.assertEquals(result, "Alan,Brian,Mario,Raoul");
     }
 
     @Test
     public void testQuestion5() {
         List<Transaction> transactions = storage.getTransactions();
-        SortedSet<String> result = service.question5(transactions);
+        boolean result = service.question5(transactions);
 
-        assertEquals(result.size(), 1);
-        assertTrue("Mario", true);
+        assertEquals(result, true);
     }
 
     @Test
@@ -85,16 +79,26 @@ public class TransactionServiceTest {
     @Test
     public void testQuestion7() {
         List<Transaction> transactions = storage.getTransactions();
-        Integer result = service.question7(transactions);
-
-        assertEquals("1000", result.toString());
+        Optional<Transaction> opt =
+                service.question7(transactions);
+        if (opt.isPresent()) {
+            Transaction maxTransaction = opt.get();
+            assertNotNull(maxTransaction);
+        } else {
+            System.out.println("Maximum transaction not found!");
+        }
     }
 
     @Test
     public void testQuestion8() {
         List<Transaction> transactions = storage.getTransactions();
-        Integer result = service.question8(transactions);
-
-        assertEquals("300", result.toString());
+        Optional<Transaction> opt =
+                service.question8(transactions);
+        if (opt.isPresent()) {
+            Transaction smallestTransaction = opt.get();
+            assertNotNull(smallestTransaction);
+        } else {
+            System.out.println("Smallest transaction not found!");
+        }
     }
 }
