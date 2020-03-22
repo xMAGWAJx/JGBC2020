@@ -43,9 +43,10 @@ public class TransactionServiceTest {
     @Test
     public void testQuestion3() {
         List<Transaction> transactions = storage.getTransactions();
-        SortedSet<String> result = service.question3(transactions);
+        String result = service.question3(transactions);
 
-        assertEquals(result.size(), 3);
+        assertEquals(result, "Alan,Brian,Raoul");
+
         assertTrue("Raoul", true);
         assertTrue("Alan", true);
         assertTrue("Brian", true);
@@ -71,6 +72,8 @@ public class TransactionServiceTest {
     public void testQuestion6() {
         List<Transaction> transactions = storage.getTransactions();
         List<Integer> result = service.question6(transactions);
+
+        System.out.println(result);
 
         assertEquals(result.size(), 4);
         assertEquals("[300, 1000, 400, 950]", result.toString());

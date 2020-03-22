@@ -1,13 +1,10 @@
 package lesson14.tradertostreamapi;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
-import java.util.SortedSet;
-import java.util.TreeSet;
 import java.util.stream.Collectors;
 
 public class TransactionService {
@@ -52,22 +49,16 @@ public class TransactionService {
         return uniqueCitiesResult;
     }
 
-    // 3. Find all traders from Cambridge and sort them by name.
+    // 3. Done - Find all traders from Cambridge and sort them by name.
 
-    public SortedSet<String> findAllTradersFromCity(List<Transaction> transactions, String targetCity) {
-        SortedSet<String> allTradersFromCity = new TreeSet<>();
-        for (Transaction transaction : transactions) {
-            Trader trader = transaction.getTrader();
-            if (trader.getCity() == targetCity) {
-                allTradersFromCity.add(String.valueOf(trader));
-            }
-        }
-        return allTradersFromCity;
-    }
-
-    public SortedSet<String> question3(List<Transaction> transactions) {
-        SortedSet<String> allTradersFromCity = findAllTradersFromCity(transactions, "Cambridge");
-        return allTradersFromCity;
+    public String question3(List<Transaction> transactions) {
+        return transactions.stream()
+                .map(transaction -> transaction.getTrader())
+                .filter(trader -> trader.getCity().equals("Cambridge"))
+                .map(Trader::getName)
+                .distinct()
+                .sorted()
+                .collect(Collectors.joining(","));
     }
 
     // Done - 4. Return a string of all traders’ names sorted alphabetically.
@@ -89,22 +80,12 @@ public class TransactionService {
                 .anyMatch(city -> city.equals("Milan"));
     }
 
-    // 6. Print all transactions’ values from the traders living in Cambridge.
-
-    public List<Integer> findTransactionsTradersFromCity(List<Transaction> transactions, String targetCity) {
-        List<Integer> transactionsTradersFromCity = new ArrayList<>();
-        for (Transaction transaction : transactions) {
-            Trader trader = transaction.getTrader();
-            if (trader.getCity() == targetCity) {
-                transactionsTradersFromCity.add(transaction.getValue());
-            }
-        }
-        return transactionsTradersFromCity;
-    }
+    // 6. InProgress - Print all transactions’ values from the traders living in Cambridge.
 
     public List<Integer> question6(List<Transaction> transactions) {
-        List<Integer> allTransactionsTradersFromCity = findTransactionsTradersFromCity(transactions, "Cambridge");
-        return allTransactionsTradersFromCity;
+        return (List<Integer>) transactions.stream()
+                .map(transaction -> transaction.getValue())
+                .collect(Collectors.toSet());
     }
 
     // Done - 7. What’s the highest value of all the transactions?
