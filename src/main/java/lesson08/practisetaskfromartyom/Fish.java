@@ -9,12 +9,12 @@ public class Fish extends Animal {
         counter++;
     }
 
+    public static int getFishCount() {
+        return counter;
+    }
+
     @Override
     public void breath() {
         System.out.println("Fish is breathing");
-    }
-
-    public static int getFishCount() {
-        return counter;
     }
 }

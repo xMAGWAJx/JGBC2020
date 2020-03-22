@@ -5,7 +5,7 @@ public class Product {
     private double regularPrice;
     private double discount;
 
-    public Product (String name) {
+    public Product(String name) {
         this.name = name;
     }
 
@@ -24,12 +24,12 @@ public class Product {
         return regularPrice;
     }
 
-    public int getDiscount() {
-        return (int)discount;
-    }
-
     public void setRegularPrice(double regularPrice) {
         this.regularPrice = regularPrice;
+    }
+
+    public int getDiscount() {
+        return (int) discount;
     }
 
     public void setDiscount(int discount) {

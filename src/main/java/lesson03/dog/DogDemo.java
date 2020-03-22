@@ -12,7 +12,7 @@ public class DogDemo {
 
         System.out.println();
 
-        Dog sleepy = new Dog (9000, "white", "Sleepy");
+        Dog sleepy = new Dog(9000, "white", "Sleepy");
         System.out.println("Dog: " + sleepy.getName() + " is " + sleepy.getAge() + " years old and it's color is: " + sleepy.getColor() + ".");
         System.out.println("Sleepy dog is not eating");
         System.out.print(sleepy.getName() + " is lying in a corner and he's sleeping making this sound - ");

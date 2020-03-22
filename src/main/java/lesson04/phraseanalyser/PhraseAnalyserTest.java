@@ -99,7 +99,7 @@ public class PhraseAnalyserTest {
         checkThatEqual(expectedResult, actualResult, testDescription);
     }
 
-   public void test7() {
+    public void test7() {
         String testDescription = "Test7: Return failed for - 'It stands no chance' - text contains 'Make' and great again but it's in the middle of the sentence";
 
         PhraseAnalyser victim = new PhraseAnalyser();
@@ -125,7 +125,7 @@ public class PhraseAnalyserTest {
         checkThatEqual(expectedResult, actualResult, testDescription);
     }
 
-    public void checkThatEqual (String expected, String actual, String testDescription) {
+    public void checkThatEqual(String expected, String actual, String testDescription) {
         if (expected.equals(actual)) {
             System.out.println(testDescription + " - has passed!");
         } else {

@@ -2,13 +2,13 @@ package lesson07.arrayservice;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ArrayServiceTest {
 
     @Test
     void create() {
-        int [] arrayTest = ArrayService.create(3);
+        int[] arrayTest = ArrayService.create(3);
 
         int expectedResult = 3;
         int actualResult = arrayTest.length;
@@ -18,7 +18,7 @@ class ArrayServiceTest {
 
     @Test
     void sum() {
-        int [] arrayTest = ArrayService.create(3);
+        int[] arrayTest = ArrayService.create(3);
 
         arrayTest[0] = 1;
         arrayTest[1] = 2;
@@ -32,7 +32,7 @@ class ArrayServiceTest {
 
     @Test
     void avg() {
-        int [] arrayTest = ArrayService.create(4);
+        int[] arrayTest = ArrayService.create(4);
 
         arrayTest[0] = 1;
         arrayTest[1] = 2;

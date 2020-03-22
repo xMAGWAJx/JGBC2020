@@ -10,6 +10,10 @@ public abstract class Animal {
         counter++;
     }
 
+    public static int getAnimalCount() {
+        return counter;
+    }
+
     public abstract void breath();
 
     public String getName() {
@@ -18,10 +22,6 @@ public abstract class Animal {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public static int getAnimalCount() {
-        return counter;
     }
 
     @Override

@@ -2,7 +2,7 @@ package lesson08.shape;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class AbstractShapeTest {
 
@@ -32,7 +32,7 @@ class AbstractShapeTest {
     @Test
     void getArea_Triangle() {
 
-        Triangle testTriangle = new Triangle(5, 6,3);
+        Triangle testTriangle = new Triangle(5, 6, 3);
 
         double expectedResult = 7.483314773547883;
         double actualResult = testTriangle.getArea();

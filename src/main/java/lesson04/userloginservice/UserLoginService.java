@@ -7,7 +7,7 @@ public class UserLoginService {
         if (!user.isUserIsBlocked() && user.getPassword().equals(password)) {
             user.resetNumberOfAttempts();
             System.out.println("User " + user.getLogin() + " is logged in.");
-        } else if (user.getNumberOfAttempts() > 1){
+        } else if (user.getNumberOfAttempts() > 1) {
             user.decreaseAmountOfAttempts();
         } else {
             user.blockUser();

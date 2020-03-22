@@ -10,44 +10,44 @@ public class Counter {
         this.step = 1;
     }
 
-  public int getValue() {
-    System.out.println("Value equals to : " + value);
-    return this.value;
-  }
+    public int getValue() {
+        System.out.println("Value equals to : " + value);
+        return this.value;
+    }
 
-  public int getStep() {
-    System.out.println("Step equals to: " + step);
-    return step;
-  }
+    public void setValue(int value) {
+        if (value >= 0 && value <= 100) {
+            this.value = value;
+        }
+    }
 
-  public void setStep(int step) {
-      if (step >= 1 && step <= 10) {
-        this.step = step;
-      }
-  }
+    public int getStep() {
+        System.out.println("Step equals to: " + step);
+        return step;
+    }
 
-  public void setValue(int value) {
-      if (value >= 0 && value <= 100) {
-        this.value = value;
-      }
-  }
+    public void setStep(int step) {
+        if (step >= 1 && step <= 10) {
+            this.step = step;
+        }
+    }
 
-  public void increment() {
-      int incrementValue = this.value + this.step;
-      if ((incrementValue >= 0) && (incrementValue < 100) ) {
-        this.value = incrementValue;
-      }
+    public void increment() {
+        int incrementValue = this.value + this.step;
+        if ((incrementValue >= 0) && (incrementValue < 100)) {
+            this.value = incrementValue;
+        }
     }
 
     public void decrement() {
-      int incrementValue = this.value - this.step;
-      if (incrementValue >= 0) {
-        this.value = incrementValue;
-      }
+        int incrementValue = this.value - this.step;
+        if (incrementValue >= 0) {
+            this.value = incrementValue;
+        }
     }
 
     public void clear() {
-      this.value = 0;
-      this.step = 1;
+        this.value = 0;
+        this.step = 1;
     }
 }

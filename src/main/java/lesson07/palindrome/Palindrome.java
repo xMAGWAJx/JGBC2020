@@ -11,7 +11,7 @@ public class Palindrome {
         char[] charArray = text.toCharArray();
         int charArraySize = charArray.length;
 
-        char[] charArrayToCompare = Arrays.copyOf(charArray,charArray.length);
+        char[] charArrayToCompare = Arrays.copyOf(charArray, charArray.length);
 
         for (int i = 0; i < charArraySize / 2; i++) {
             char tempCharacter = charArray[i];

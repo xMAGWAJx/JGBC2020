@@ -85,4 +85,12 @@ public class TransactionServiceTest {
 
         assertEquals("1000", result.toString());
     }
+
+    @Test
+    public void testQuestion8() {
+        List<Transaction> transactions = storage.getTransactions();
+        Integer result = service.question8(transactions);
+
+        assertEquals("300", result.toString());
+    }
 }

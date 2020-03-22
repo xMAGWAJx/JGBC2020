@@ -20,7 +20,7 @@ public class UniqueWordCounter {
     public String getMostFrequentWord() {
         String returnMostFrequentWord = null;
         int mostFrequentWord = 1;
-        for (Map.Entry<String, Integer> entry: uniqueWordCounter.entrySet()) {
+        for (Map.Entry<String, Integer> entry : uniqueWordCounter.entrySet()) {
             if (entry.getValue() >= mostFrequentWord) {
                 mostFrequentWord = entry.getValue();
                 returnMostFrequentWord = entry.getKey();
@@ -31,7 +31,7 @@ public class UniqueWordCounter {
     }
 
     public void printWordsFrequency() {
-        for (Map.Entry<String, Integer> entry: uniqueWordCounter.entrySet()) {
+        for (Map.Entry<String, Integer> entry : uniqueWordCounter.entrySet()) {
             System.out.println(entry.getKey() + " = " + entry.getValue());
         }
     }

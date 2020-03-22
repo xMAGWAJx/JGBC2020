@@ -19,12 +19,12 @@ public class User {
         return id;
     }
 
-    public int getAge() {
-        return age;
-    }
-
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getAge() {
+        return age;
     }
 
     @Override

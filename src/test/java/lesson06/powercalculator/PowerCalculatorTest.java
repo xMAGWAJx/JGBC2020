@@ -2,7 +2,7 @@ package lesson06.powercalculator;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class PowerCalculatorTest {
 
@@ -11,7 +11,7 @@ class PowerCalculatorTest {
         PowerCalculator victim = new PowerCalculator();
 
         int expected = 27;
-        int actual = victim.resultNumber(3,3);
+        int actual = victim.resultNumber(3, 3);
 
         assertEquals(expected, actual);
     }
@@ -21,7 +21,7 @@ class PowerCalculatorTest {
         PowerCalculator victim = new PowerCalculator();
 
         String expected = "Values are incorrect!";
-        int actual = victim.resultNumber(-3,-3);
+        int actual = victim.resultNumber(-3, -3);
 
         assertEquals(expected, actual);
     }

@@ -8,7 +8,7 @@ public class UserService {
         this.userRepositoryDataBase = userRepositoryDataBase;
     }
 
-    public void addUser (User user) {
+    public void addUser(User user) {
         userRepositoryDataBase.save(user);
     }
 }

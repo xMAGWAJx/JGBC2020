@@ -2,15 +2,15 @@ package lesson05.creditcard;
 
 public class CreditCardDemo {
 
-  public static void main(String[] args) {
+    public static void main(String[] args) {
 
-    CreditCard myCard = new CreditCard("6467041946153399", "1234");
-    myCard.setCardCreditLimit(500);
+        CreditCard myCard = new CreditCard("6467041946153399", "1234");
+        myCard.setCardCreditLimit(500);
 
 
 //    System.out.println(myCard.getCardBalance());
 
-    myCard.deposit(150, "1234");
+        myCard.deposit(150, "1234");
 //    myCard.withdraw(50, "1234");
 //    myCard.withdraw(50, "1422451234");
 
@@ -29,5 +29,5 @@ public class CreditCardDemo {
 //Should complete operation because limit is increased to 7500
     myCard.setCardCreditLimit(7500);
     myCard.withdraw(5000, "1234");*/
-  }
+    }
 }

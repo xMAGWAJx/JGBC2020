@@ -1,6 +1,6 @@
 package lesson11.userserviceanduserrepository;
 
-public class MockUserRepository extends UserRepository{
+public class MockUserRepository extends UserRepository {
 
     public boolean isMockTriggered = false;
 
