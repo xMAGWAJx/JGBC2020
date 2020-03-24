@@ -80,12 +80,20 @@ public class TransactionService {
                 .anyMatch(city -> city.equals("Milan"));
     }
 
-    // 6. InProgress - Print all transactions’ values from the traders living in Cambridge.
+    // 6. Done - Print all transactions’ values from the traders living in Cambridge.
 
-    public List<Integer> question6(List<Transaction> transactions) {
-        return (List<Integer>) transactions.stream()
+    public String question6(List<Transaction> transactions) {
+        return transactions.stream()
+                //.filter(transaction -> transaction.getTrader().getCity().equals("Cambridge"))
+                .filter(this::transactionFromCambridge)
                 .map(transaction -> transaction.getValue())
-                .collect(Collectors.toSet());
+                .map(value -> value.toString())
+                .collect(Collectors.joining(","));
+    }
+
+    private boolean transactionFromCambridge(Transaction transaction) {
+        Trader trader = transaction.getTrader();
+        return trader.getCity().equals("Cambridge");
     }
 
     // Done - 7. What’s the highest value of all the transactions?
